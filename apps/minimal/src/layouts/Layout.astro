@@ -1,0 +1,49 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import '@fontsource-variable/inter'
+import ThemeToggle from '@/components/ThemeToggle.astro'
+import TailwindIndicator from '@astrokit/tailwind-indicator'
+
+interface Props {
+	title?: string
+}
+const { title } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title || Astro.generator}</title>
+		<ViewTransitions />
+	</head>
+	<body
+		class:list={[
+			'flex flex-col h-screen transition-all duration-300',
+			'text-font-color bg-background-color',
+			'dark:text-font-color dark:bg-background-color',
+		]}
+	>
+		<header class="flex flex-row justify-between p-4 w-full fixed">
+			<a href="/"
+				><h2 class="font-black text-2xl">{title || Astro.generator}</h2></a
+			>
+			<ThemeToggle />
+		</header>
+		<slot />
+		<footer></footer>
+		<TailwindIndicator align="right" />
+		<style is:global>
+			:root {
+				--font-color: #f99abb;
+				--background-color: #0a174a;
+			}
+			html.dark {
+				--font-color: #0a174a;
+				--background-color: #f99cbd;
+			}
+		</style>
+	</body>
+</html>

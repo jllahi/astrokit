@@ -9,6 +9,7 @@
 				"^build"
 			],
 			"outputs": [
+				"dist/**",
 				".vercel/**",
 				"!.vercel/cache/**"
 			]
@@ -21,6 +22,20 @@
 		"dev": {
 			"cache": false,
 			"persistent": true
+		},
+		"check": {
+			"cache": false,
+			"persistent": true,
+			"dependsOn": [
+				"^check"
+			]
+		},
+		"clean": {
+			"cache": false,
+			"persistent": true,
+			"dependsOn": [
+				"^clean"
+			]
 		}
 	}
 }
