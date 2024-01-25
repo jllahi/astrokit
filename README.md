@@ -1,2 +1,1 @@
-# astrokit
-AstroKit Monorepo
+# AstroKit
