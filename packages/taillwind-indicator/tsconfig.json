@@ -1,12 +1,14 @@
 {
 	"extends": "astro/tsconfigs/strict",
+	"include": ["src", "node_modules/@astrokit/**/*"],
+	"exclude": ["dist", "build", "node_modules"],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"],
 		},
-		// "jsx": "preserve",
-		"jsx": "react-jsx",
+		"jsx": "preserve",
+		// "jsx": "react-jsx",
 		// 	"jsxImportSource": "react",
 	},
 }

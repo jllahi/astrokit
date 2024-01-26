@@ -1,5 +1,5 @@
 {
-	"extends": "@astrokit/typescript-config/astro.json",
+	// "extends": "@astrokit/typescript-config/astro.json",
 	// "include": [],
 	// "exclude": ["node_modules"],
 	// "compilerOptions": {

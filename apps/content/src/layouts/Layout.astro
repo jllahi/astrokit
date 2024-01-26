@@ -1,0 +1,58 @@
+---
+import { site } from '@/data/site'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import { type Props as SEOProps, SEO } from 'astro-seo'
+import { ViewTransitions } from 'astro:transitions'
+import '@fontsource-variable/montserrat'
+import '@fontsource-variable/inter'
+
+interface Props {
+	seo?: SEOProps
+}
+
+const { seo } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<SEO
+			title={seo?.title ?? site.title}
+			description={seo?.description ?? site.description}
+			extend={{
+				meta: [{ name: 'twitter:card', content: 'summary' }],
+			}}
+			{...seo}
+		/>
+		<ViewTransitions />
+	</head>
+	<body
+		class:list={[
+			'p-6 h-screen flex flex-col items-start justify-between font-sans mx-auto container max-w-3xl transition-all duration-300',
+			'text-font-color bg-background-color',
+			'dark:text-font-color dark:bg-background-color',
+		]}
+	>
+		<Header />
+		<main class="flex-grow w-full">
+			<slot />
+		</main>
+		<Footer />
+		<TailwindIndicator align="right" />
+		<style is:global>
+			:root {
+				--font-color: theme('colors.teal.100');
+				--background-color: theme('colors.slate.900');
+			}
+			html.dark {
+				--font-color: theme('colors.slate.900');
+				--background-color: theme('colors.teal.100');
+			}
+		</style>
+	</body>
+</html>

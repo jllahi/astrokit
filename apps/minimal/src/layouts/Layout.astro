@@ -1,8 +1,8 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
 import '@fontsource-variable/inter'
-import ThemeToggle from '@/components/ThemeToggle.astro'
-import TailwindIndicator from '@astrokit/tailwind-indicator'
+// import TailwindIndicator from '@astrokit/tailwind-indicator'
+import ThemeToggle from '@astrokit/theme-toggle'
 
 interface Props {
 	title?: string
@@ -37,12 +37,12 @@ const { title } = Astro.props
 		<TailwindIndicator align="right" />
 		<style is:global>
 			:root {
-				--font-color: #f99abb;
-				--background-color: #0a174a;
+				--background-color: #f99abb;
+				--font-color: #0a174a;
 			}
 			html.dark {
-				--font-color: #0a174a;
-				--background-color: #f99cbd;
+				--background-color: #0a174a;
+				--font-color: #f99cbd;
 			}
 		</style>
 	</body>

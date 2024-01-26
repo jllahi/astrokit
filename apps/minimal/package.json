@@ -18,6 +18,7 @@
 		"@astrokit/debug-css": "workspace:*",
 		"@astrokit/tailwind-config-viewer": "workspace:*",
 		"@astrokit/tailwind-indicator": "workspace:*",
+		"@astrokit/theme-toggle": "workspace:*",
 		"@fontsource-variable/inter": "^5.0.16",
 		"@iconify-json/heroicons": "^1.1.19",
 		"astro": "^4.2.4",

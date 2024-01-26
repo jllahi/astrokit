@@ -13,10 +13,14 @@
 	"keywords": [
 		"withastro"
 	],
-	"scripts": {},
+	"scripts": {
+		"check": "astro check",
+		"lint": "astro check",
+		"clean": "rimraf .turbo .astro .vercel dist *.log node_modules"
+	},
 	"devDependencies": {
 		"@astrojs/check": "^0.4.1",
-		"@types/node": "^20.10.5",
+		"@types/node": "^20.11.7",
 		"@types/serve-static": "^1.15.5",
 		"typescript": "^5.3.3",
 		"vite": "^5.0.10"

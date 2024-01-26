@@ -1,4 +1,4 @@
-# Astro DebugCSS
+# AstroKit ThemeToggle
 
 Astro Debug CSS is an [Astro Dev Toolbar App](https://docs.astro.build/en/reference/dev-toolbar-app-reference/) that enables your local Astro server to display outlines for debugging your CSS, no additional configuration is required.
 
@@ -7,7 +7,7 @@ Astro Debug CSS is an [Astro Dev Toolbar App](https://docs.astro.build/en/refere
 To install Astro Debug CSS, run the following command with your preferred package manager:
 
 ```sh
-pnpm install github:jllahi/astro-debugcss
+pnpm install github:jllahi/@astrokit/theme-toggle
 ```
 
 ## Usage

@@ -5,12 +5,15 @@
 		"build": "turbo build",
 		"dev": "turbo dev",
 		"lint": "turbo lint",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\""
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"check": "astro check",
+		"clean": "rimraf .turbo .astro .vercel dist *.log node_modules"
 	},
 	"devDependencies": {
 		"@astrokit/eslint-config": "workspace:*",
 		"@astrokit/prettier-config": "workspace:*",
 		"@turbo/gen": "^1.11.3",
+		"astro": "^4.2.4",
 		"eslint": "^8.56.0",
 		"prettier": "^3.1.1",
 		"rimraf": "^5.0.5",

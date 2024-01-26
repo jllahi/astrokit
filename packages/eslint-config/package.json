@@ -5,6 +5,11 @@
 	"files": [
 		"index.js"
 	],
+	"scripts": {
+		"check": "astro check",
+		"lint": "astro check",
+		"clean": "rimraf .turbo .astro .vercel dist *.log node_modules"
+	},
 	"devDependencies": {
 		"@vercel/style-guide": "^5.1.0",
 		"eslint-config-turbo": "^1.11.3",

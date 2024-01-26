@@ -1,0 +1,23 @@
+{
+	"recommendations": [
+		"aaron-bond.better-comments",
+		"astro-build.astro-vscode",
+		"astro-build.houston",
+		"bradlc.vscode-tailwindcss",
+		"DavidAnson.vscode-markdownlint",
+		"eliostruyf.vscode-front-matter",
+		"esbenp.prettier-vscode",
+		"idered.npm",
+		"mhutchie.git-graph",
+		"SheltonLouis.astro-snippets",
+		// "svelte.svelte-vscode",
+		"unifiedjs.vscode-mdx",
+		"usernamehw.errorlens",
+		"VisualStudioExptTeam.vscodeintellicode",
+		"WallabyJs.console-ninja",
+		"xabikos.JavaScriptSnippets",
+		"yoavbls.pretty-ts-errors",
+		"stivo.tailwind-fold"
+	],
+	"unwantedRecommendations": []
+}

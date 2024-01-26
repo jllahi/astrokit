@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
+import site from '@/data/site'
+import Layout from '@/layouts/Layout.astro'
+import Spotify from '@/components/embed/Spotify.astro'
+import Date from '@/components/utils/Date.astro'
+import Tags from '@/components/Tags.astro'
+
+// export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths() {
+	const posts = await getCollection('posts')
+
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}))
+	// return paginate(allPokemon, { pageSize: 10 });
+}
+// type Props = CollectionEntry<'posts'>
+// const post = Astro.props
+
+// const post: CollectionEntry<'blog'> = Astro.props.post
+
+const { post } = Astro.props
+
+const { Content } = await post.render()
+---
+
+<Layout
+	seo={{
+		title: post.data.title,
+		description: post.data.description ?? site.description,
+		openGraph: {
+			basic: {
+				title: post.data.title,
+				type: 'article',
+				image: post.data.image.src,
+			},
+		},
+	}}
+>
+	<article
+		class="article-grid text-md grid gap-y-4 font-sans leading-relaxed md:gap-y-4 md:text-xl my-4"
+	>
+		<h1 class="font-black text-5xl my-4 text-balance">{post.data.title}</h1>
+
+		<p class="text-left">{post.data.description}</p>
+
+		<Image
+			alt={post.data.title}
+			src={post.data.image}
+			class="w-full object-cover aspect-video my-4 rounded"
+			width="720"
+			transition:name={`post-image-${post.data.title}`}
+		/>
+
+		<div class="flex flex-row justify-between">
+			<Date date={post.data.date} />
+			<!-- <span>Reading time: {post.data.reading}</span> -->
+			<Tags tags={post.data.tags} />
+		</div>
+
+		<div class="prose-lg prose-gray prose-img:rounded">
+			<Content components={{ Spotify }} />
+		</div>
+	</article>
+</Layout>

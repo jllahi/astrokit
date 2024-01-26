@@ -11,15 +11,18 @@
 	"keywords": [
 		"withastro"
 	],
-	"scripts": {},
+	"scripts": {
+		"check": "astro check",
+		"lint": "astro check",
+		"clean": "rimraf .turbo .astro .vercel dist *.log node_modules"
+	},
 	"devDependencies": {
-		"@astrojs/check": "^0.3.4",
-		"@types/node": "^20.10.6",
+		"@astrojs/check": "^0.4.1",
+		"@types/node": "^20.11.7",
 		"astro": "^4.0.8",
 		"typescript": "^5.3.3"
 	},
 	"peerDependencies": {
 		"astro": "^4.0.0"
-	},
-	"dependencies": {}
+	}
 }

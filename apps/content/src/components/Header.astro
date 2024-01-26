@@ -1,0 +1,19 @@
+---
+import site from '@/data/site'
+// import Navigation from '@/components/Navigation.astro'
+import ResponsiveMenu from './ResponsiveMenu.astro'
+---
+
+<header
+	class:list={[
+		'flex flex-row justify-between w-full',
+		'border-b mb-4 pb-4 border-font-color',
+	]}
+>
+	<a href="/"
+		><h2 class="font-black text-2xl font-logo uppercase no-underline">
+			{site.title}
+		</h2></a
+	>
+	<ResponsiveMenu />
+</header>

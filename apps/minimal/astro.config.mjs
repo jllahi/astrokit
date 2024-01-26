@@ -10,12 +10,13 @@ import metaTags from 'astro-meta-tags'
 export default defineConfig({
 	integrations: [
 		tailwind(),
-		icon({
-			iconDir: 'src/assets/icons',
-			include: {
-				heroicons: ['sun', 'moon'],
-			},
-		}),
+		icon(),
+		// icon({
+		// 	iconDir: 'src/assets/icons',
+		// 	include: {
+		// 		heroicons: ['sun', 'moon'],
+		// 	},
+		// }),
 		debugCss(),
 		tailwindConfigViewer(),
 		metaTags(),
